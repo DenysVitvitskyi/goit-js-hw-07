@@ -1,14 +1,14 @@
-const inputEl = document.querySelector('#validation-input');
+const inputElement = document.querySelector('#validation-input');
 
-function swapClasses(oldClass, newClass) {
-  inputEl.classList.remove(oldClass);
-  inputEl.classList.add(newClass);
+function replacementClass(oldClass, newClass) {
+  inputElement.classList.remove(oldClass);
+  inputElement.classList.add(newClass);
 }
 
-inputEl.addEventListener('blur', e => {
+inputElement.addEventListener('blur', e => {
   if (e.currentTarget.value.length !== Number(e.currentTarget.dataset.length)) {
-    return swapClasses('valid', 'invalid');
+    return replacementClass('valid', 'invalid');
+  } else {
+      return replacementClass('invalid', 'valid');
   }
-
-  return swapClasses('invalid', 'valid');
 });
