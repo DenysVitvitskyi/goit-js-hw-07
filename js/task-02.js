@@ -6,15 +6,15 @@ const ingredients = [
     'Зелень',
     'Приправы',
   ];
-  const createItemsArr = arr => {
-    return arr.map(el => {
-      const itemEl = document.createElement('li');
-      itemEl.textContent = el;
-      itemEl.classList.add('item');
-      return itemEl;
+  const createItemsArray = array => {
+    return array.map(element => {
+      const itemElement = document.createElement('li');
+      itemElement.textContent = element;
+      itemElement.classList.add('item');
+      return itemElement;
     });
   };
   
-  const listEl = document.querySelector('#ingredients');
-  const itemsArr = createItemsArr(ingredients);
-  listEl.append(...itemsArr);
+  const listElement = document.querySelector('#ingredients');
+  const itemsArray = createItemsArray(ingredients);
+  listElement.append(...itemsArray);
