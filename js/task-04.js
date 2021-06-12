@@ -1,8 +1,8 @@
-const actions = document.querySelectorAll('#counter button');
-const spanEl = document.querySelector('#value');
+const doing = document.querySelectorAll('#counter button');
+const spanElement = document.querySelector('#value');
 
-const bthDecr = actions[0];
-const btnIncr = actions[1];
+const btnDecr = doing[0];
+const btnIncr = doing[1];
 let counterValue = 0;
 
 const decrement = () => {
@@ -16,8 +16,8 @@ const increment = () => {
 };
 
 function updateCounter() {
-  spanEl.textContent = counterValue;
+  spanElement.textContent = counterValue;
 }
 
 btnIncr.addEventListener('click', increment);
-bthDecr.addEventListener('click', decrement);
+btnDecr.addEventListener('click', decrement);
