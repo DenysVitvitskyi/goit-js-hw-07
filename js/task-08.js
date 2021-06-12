@@ -1,25 +1,22 @@
-const controlsArrEl = document.querySelectorAll('#controls button');
-const btnRenderEl = controlsArrEl[0];
-const btnDestroyEl = controlsArrEl[1];
-const inputEl = document.querySelector('input[type="number"]');
-const boxesEl = document.querySelector('#boxes');
+const controlArrayElement = document.querySelectorAll('#controls button');
+const btnRenderElement = controlArrayElement[0];
+const btnDestroyElement = controlArrayElement[1];
+const inputElement = document.querySelector('input[type="number"]');
+const boxesElement = document.querySelector('#boxes');
 
 let inputValue = 0;
 
-// -------- Вешаем слушателей
-inputEl.addEventListener('input', onInputTargetInput);
-btnRenderEl.addEventListener('click', onClickTargetBtn);
-btnDestroyEl.addEventListener('click', destroyBoxes);
+inputElement.addEventListener('input', onInputTargetInput);
+btnRenderElement.addEventListener('click', onClickTargetBtn);
+btnDestroyElement.addEventListener('click', destroyBoxes);
 
-// -------- Возвращает input.value
 function onInputTargetInput(event) {
   inputValue = event.currentTarget.value;
   return Number(inputValue);
 }
 
-// -------- Создаёт divs
 function createBoxes(amount) {
-  let boxesArr = [];
+  let boxesArray = [];
   let increment = 0;
 
   for (let i = 0; i < amount; i += 1) {
@@ -27,26 +24,23 @@ function createBoxes(amount) {
     newBox.style.width = `${30 + increment}px`;
     newBox.style.height = `${30 + increment}px`;
     newBox.style.backgroundColor = '#' + randomColors();
-    boxesArr.push(newBox);
+    boxesArray.push(newBox);
 
     increment += 10;
   }
 
-  boxesEl.append(...boxesArr);
+  boxesElement.append(...boxesArray);
 }
 
-// -------- Загоняет input.value в качестве аргумента в createBoxes()
 function onClickTargetBtn() {
   return createBoxes(inputValue);
 }
 
-// -------- Функция очищает родительский div от созданного контента
 function destroyBoxes() {
-  boxesEl.innerHTML = '';
-  inputEl.value = '';
+  boxesElement.innerHTML = '';
+  inputElement.value = '';
 }
 
-// -------- Функция создает рандомные цвета
 function randomColors() {
   return Math.floor(Math.random() * 16777215).toString(16);
 }
