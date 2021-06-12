@@ -1,9 +1,9 @@
-const refs = {
-    rangeEl: document.querySelector('#font-size-control'),
-    textEl: document.querySelector('#text'),
+const replacement = {
+    rangeElement: document.querySelector('#font-size-control'),
+    textElement: document.querySelector('#text'),
   };
   
-  refs.rangeEl.addEventListener(
+  replacement.rangeElement.addEventListener(
     'change',
-    e => (refs.textEl.style.fontSize = e.currentTarget.value + 'px'),
+    e => (replacement.textElement.style.fontSize = e.currentTarget.value + 'px'),
   );
