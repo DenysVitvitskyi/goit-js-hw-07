@@ -4,7 +4,7 @@ const setText = {
   };
 
   setText.inputElement.addEventListener('input', e => {
-      if (!e.currentTarget.value) {
+      if (!e.currentTarget.value.trim()) {
           setText.spanElement.textContent = 'незнакомец';
       } else {
           setText.spanElement.textContent = e.currentTarget.value;
